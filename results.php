@@ -60,7 +60,7 @@ if (!$nothing_to_search) {
 	$count_statement = preg_replace('/\*/','count(*)',$statement);
 	try {
 		
-		$db = new PDO('mysql:host='.$dbcon['thishost'].';dbname='.$dbcon['db_table'].';charset=utf8', $dbcon['user'], $dbcon['pass']);  
+		$db = new PDO('mysql:host='.$dbcon['thishost'].';dbname='.$dbcon['db_title'].';charset=utf8', $dbcon['user'], $dbcon['pass']);  
 		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 		$num_rows[0] = $db->query($count_statement)->fetchColumn();
 		if ($num_rows[0] < 1) { $no_results = true; }
